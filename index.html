@@ -1,56 +1,90 @@
-Images<!DOCTYPE html>
-<html lang="en" >
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Happy Birthday</title>
-  <link rel="stylesheet" href="./style.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quality Selector with Heart Animation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #000;
+        }
+        .container {
+            text-align: center;
+        }
+        select {
+            padding: 10px;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+        img {
+            width: 200px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        .heart {
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
 </head>
 <body>
-<!-- partial:index.partial.html -->
-<div id="drag-container">
-  <div id="spin-container">
 
-
-
-    <img src="1.jpg" alt="">
-    <img src="2.jpg" alt="">
-    <img src="3.jpg" alt="">
-    <img src="4.jpg" alt="">
-    <img src="5.jpg" alt="">
-    <img src="6.jpg" alt="">
-    <img src="7.jpg" alt="">
-    <img src="8.jpg" alt="">
-    <img src="9.jpg" alt="">
-    <img src="10.jpg" alt="">
-
-
-    <!-- <video controls autoplay="autoplay" loop>
-      <source src="imgs/29.mp4" type="video/mp4">
-    </video> -->
-
-    <!-- Text at center of ground -->
-    <p>     Happy <mark>Birthday</mark></p>
-  </div>
-  <div id="ground"></div>
+<div class="container">
+    <img id="heartImage" src="" alt="Heart Image" class="heart" style="display:none;">
+    <select id="qualitySelector" onchange="changeHeartImage()">
+        <option value="">--Select Quality--</option>
+        <option value="144p">144p</option>
+        <option value="240p">240p</option>
+        <option value="360p">360p</option>
+        <option value="480p">480p</option>
+        <option value="720p">720p</option>
+        <option value="1080p">1080p</option>
+    </select>
 </div>
 
-<div id="music-container"></div>
-<audio id="myAudio" autoplay></audio>
-  <source src="Bday.mp3" type="audio/ogg">
-  <source src="Bday.mp3" type="audio/mpeg">
-  </audio>
+<script>
+    function changeHeartImage() {
+        const quality = document.getElementById("qualitySelector").value;
+        const heartImage = document.getElementById("heartImage");
 
-<style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
-<!-- partial -->
+        if (quality === "144p") {
+            heartImage.src = "1.png"; // Replace with your heart image URL for 144p
+        } else if (quality === "240p") {
+            heartImage.src = "2.png"; // Replace with your heart image URL for 240p
+        } else if (quality === "360p") {
+            heartImage.src = "3.png"; // Replace with your heart image URL for 480p
+        } else if (quality === "480p") {
+            heartImage.src = "4.png"; // Replace with your heart image URL for 720p
+        } else if (quality === "720p") {
+            heartImage.src = "5.png"; // Replace with your heart image URL for 1080p
+        } else if (quality === "1080p") {
+            heartImage.src = "6.jpeg";   // Replace with your heart image URL for 4K
+        } else {
+            heartImage.src = "";
+        }
 
-  <script>
-    function myFunction() {
-      var x = document.getElementById("myAudio").autoplay;
-      document.getElementById("demo").innerHTML = x;
+        // Show or hide the heart image
+        if (heartImage.src) {
+            heartImage.style.display = "block";
+        } else {
+            heartImage.style.display = "none";
+        }
     }
-    myFunction();</script>
-  <script  src="./script.js"></script>
+</script>
 
 </body>
+</html>
 
+
+<!-- <a href="https://ibb.co/YdPgcXf"><img src="https://i.ibb.co/7pjhnQr/1728104886030.png" alt="1728104886030" border="0"></a>
+<a href="https://ibb.co/MGPpWSv"><img src="https://i.ibb.co/rc5MT0j/1728105049878.png" alt="1728105049878" border="0"></a>
+<a href="https://ibb.co/tpjgQ13"><img src="https://i.ibb.co/v4ypVMD/1728104971285.png" alt="1728104971285" border="0"></a>
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/T8xp0Z0/anatomical-heart-1fac0.png" alt="anatomical-heart-1fac0" border="0"></a>
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/HTvVn2G/pngtree-red-3d-heart-png-image-2569975.png" alt="pngtree-red-3d-heart-png-image-2569975" border="0"></a> -->
